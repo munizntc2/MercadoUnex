@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pagamento - Mercado Unex</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Página de Pagamento</h1>
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5>Resumo da Compra</h5>
+                </div>
+                <div class="card-body" id="cart-summary">
+                    <p id="cart-items-summary">Carregando...</p>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <strong>Total:</strong> <span id="total"></span>
+                    </div>
+                </div>
+            </div>
+
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="name">Nome Completo</label>
+                    <input type="text" class="form-control" id="name" placeholder="Digite seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Endereço de Entrega</label>
+                    <input type="text" class="form-control" id="address" placeholder="Digite seu endereço" required>
+                </div>
+                <div class="form-group">
+                    <label for="payment-method">Método de Pagamento</label>
+                    <select class="form-control" id="payment-method" required>
+                        <option value="boleto">Boleto Bancário</option>
+                        <option value="credit-card">Cartão de Crédito</option>
+                        <option value="boleto">Pix</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="card-details" style="display:none;">
+                    <label for="card-number">Número do Cartão</label>
+                    <input type="text" class="form-control" id="card-number" placeholder="XXXX XXXX XXXX XXXX" maxlength="16">
+                </div>
+
+                <div id="error-message" class="alert alert-danger" style="display:none;"></div>
+
+                <button type="submit" class="btn btn-primary btn-block">Finalizar Compra</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="payment.js"></script>
+</body>
+</html>
